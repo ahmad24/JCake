@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="library" method="upgrade" version="1.7.0">
+	<name>cakephp</name>
+	<libraryname>cake2</libraryname>
+	<author>cakephp.com</author>
+	<creationDate>01.2014</creationDate>
+	<copyright>Copyright (C) 2013</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>webmaster@cakephp.com</authorEmail>
+	<authorUrl>www.cakephp.com</authorUrl>
+	<version>1.0</version>
+	<description>The cakephp framework classes!</description>
+	
+	<files>
+		<folder>lib</folder>
+	</files>
+</extension>
