@@ -61,7 +61,11 @@ if (!defined('APP_DIR')) {
  * The following line differs from its sibling
  * /lib/Cake/Console/Templates/skel/webroot/index.php
  */
-//define('CAKE_CORE_INCLUDE_PATH', ROOT . DS . 'lib');
+ 
+ /*
+ By Ahmad Nabulsi
+ */
+define('CAKE_CORE_INCLUDE_PATH', JPATH_LIBRARIES . DS . 'cake2' . DS . 'lib' );
 
 /**
  * Editing below this line should NOT be necessary.
@@ -91,6 +95,7 @@ if (!defined('CAKE_CORE_INCLUDE_PATH')) {
 		$failed = true;
 	}
 } else {
+   // echo CAKE_CORE_INCLUDE_PATH . DS . 'bootstrap.php';exit;
 	if (!include CAKE_CORE_INCLUDE_PATH . DS . 'Cake' . DS . 'bootstrap.php') {
 		$failed = true;
 	}

@@ -105,3 +105,50 @@ CakeLog::config('error', array(
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
 	'file' => 'error',
 ));
+
+
+function reform_url($url) {
+    // Explode url to parts according to the / -character
+    $controller = false;
+    $action = false;
+    $param = false;
+    
+    if(!is_array($url)){
+        $url = trim($url, "/");
+        $urlParam = explode('/', $url);
+        $url = array();
+        $url['controller'] = $urlParam[0];
+        $url['action'] = $urlParam[1];
+        if(isset($urlParam[2])){
+            $keyValues = array();
+            $result = explode(":", $urlParam[2]);
+            if($result[0] == 'id'){
+                $keyValues['id'] = $result[1];
+            }
+            
+            $url['params'] = $keyValues;
+            
+        }else{
+            $url['params'] = array();
+        }
+    }
+    $controller = isset($url['controller'])?"&tasks=".$url['controller']:'';
+    $action = isset($url['action'])?".".$url['action']:''; 
+    $params = isset($url['params'])?$url['params']:array();
+    
+    unset($url['controller']);
+    unset($url['action']);
+    $urlParams = "";
+    
+    /*if(!empty($params)){
+        print_r($params);exit;
+            
+    } */
+    foreach ($params as $key=>$value){
+        $urlParams .= '&' . $key . '=' . $value;
+    }
+
+    $url = JOOMLA_PATH.'index.php?option=com_jcake'.$controller.$action.$urlParams;
+    //echo $url;exit;
+    return $url;
+}
