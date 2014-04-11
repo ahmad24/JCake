@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="1.6.0" method="upgrade">
+	<name>com_jcake</name>
+	<creationDate>1.Feb.2014</creationDate>
+	<author>JCake</author>
+	<copyright>JCake.com 2014</copyright>
+	<authorEmail>webmaster@JCake.com</authorEmail>
+	<authorUrl>www.JCake.com</authorUrl>
+	<version>5.0 RC4.1</version>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description>The ChronoForms V5 component is the ultimate tool for Joomla forms creation, power and simplicity.</description>
+
+	
+	<files>
+		<filename>jcake.php</filename>
+		<folder>app</folder>
+		<folder>plugins</folder>
+		<folder>vendors</folder>
+	</files>
+	<administration>		
+		<menu img="components/com_chronoforms5/CF.png" link="com_jcake" view="main">COM_JCAKE</menu>
+		<submenu>
+			<menu>COM_JCAKE</menu>
+			<menu act="validateinstall">COM_JCAKE_VALIDATE</menu>
+		</submenu>
+		<files folder="admin">
+			<filename>jcake.php</filename>
+			<folder>app</folder>
+			<folder>plugins</folder>
+			<folder>vendors</folder>
+		</files>
+		
+	</administration>
+	
+</extension>
